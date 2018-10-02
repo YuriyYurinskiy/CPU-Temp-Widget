@@ -23,7 +23,7 @@ dependencies:
     #   binary_name: curl
     # }
 resources:
-    - 'resources/module.coffee'
+    - 'resources/js/module.coffee'
     - 'resources/js/controllers/widget.controller.coffee'
     - 'resources/widget.html'
     - 'ng:ajenti.cpu_temp_widget'
