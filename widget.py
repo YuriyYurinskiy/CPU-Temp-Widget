@@ -12,7 +12,7 @@ class RandomWidget(Widget):
     name = 'CPU Temp'
 
     # template of the widget
-    template = '/demo_5_widget:resources/partial/widget.html'
+    template = '/cpu_temp_widget:resources/partial/widget.html'
 
     def __init__(self, context):
         Widget.__init__(self, context)
