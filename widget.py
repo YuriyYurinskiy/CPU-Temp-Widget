@@ -1,4 +1,4 @@
-import os
+import sensors
 from jadi import component
 
 from aj.plugins.dashboard.api import Widget
@@ -18,6 +18,14 @@ class RandomWidget(Widget):
         Widget.__init__(self, context)
 
     def get_value(self, config):
-        if 'bytes' not in config:
-            return 'Not configured'
-        return os.urandom(int(config['bytes'])).encode('hex')
+        text = ''
+        sensors.init()
+        try:
+            for chip in sensors.iter_detected_chips():
+                text += '%s at %s' % (chip, chip.adapter_name)
+                for feature in chip:
+                    text += '  %s: %.2f' % (feature.label, feature.get_value())
+        finally:
+            sensors.cleanup()
+
+        return text
