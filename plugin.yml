@@ -1,0 +1,30 @@
+name: cpu_temp_widget
+author: Unknown
+email: nobody@nowhere.com
+url: http://example.com
+version: '0.1'
+title: 'cpu_temp_widget'
+icon: question
+# dependency on Core is required for UI plugins
+dependencies:
+    - !!python/object:aj.plugins.PluginDependency {
+        plugin_name: core
+    }
+    # - !!python/object:aj.plugins.OptionalPluginDependency {
+    #   plugin_name: my_other_plugin
+    # }
+    # - !!python/object:aj.plugins.ModuleDependency {
+    #   module_name: requests
+    # }
+    # - !!python/object:aj.plugins.BinaryDependency {
+    #   binary_name: curl
+    # }
+resources:
+    - 'resources/module.es'
+    - 'resources/index.html'
+    - 'ng:example.cpu_temp_widget'
+    # - 'ng:my.plugin.angular-submodule'
+    # - 'resources/module.js'
+    # - 'resources/module.coffee'
+    # - 'resources/styles.css'
+    # - 'resources/styles.less'
