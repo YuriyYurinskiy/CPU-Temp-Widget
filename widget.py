@@ -1,22 +1,23 @@
+import os
 from jadi import component
 
-from aj.plugins.core.api.sidebar import SidebarItemProvider
+from aj.plugins.dashboard.api import Widget
 
 
-@component(SidebarItemProvider)
-class ItemProvider(SidebarItemProvider):
+@component(Widget)
+class RandomWidget(Widget):
+    id = 'cpu_temp'
+
+    # display name
+    name = 'CPU Temp'
+
+    # template of the widget
+    template = '/demo_5_widget:resources/partial/widget.html'
+
     def __init__(self, context):
-        pass
+        Widget.__init__(self, context)
 
-    def provide(self):
-        return [
-            {
-                # category:tools, category:sofware, category:system, category:other
-                'attach': 'category:general',
-                'name': 'Cpu Temp Widget',
-                # http://fontawesome.io/icons/
-                'icon': 'question',
-                'url': '/view/cpu_temp_widget',
-                'children': []
-            }
-        ]
+    def get_value(self, config):
+        if 'bytes' not in config:
+            return 'Not configured'
+        return os.urandom(int(config['bytes'])).encode('hex')
