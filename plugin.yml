@@ -25,5 +25,5 @@ dependencies:
 resources:
     - 'resources/js/module.coffee'
     - 'resources/js/controllers/widget.controller.coffee'
-    - 'resources/widget.html'
+    - 'resources/partial/widget.html'
     - 'ng:ajenti.cpu_temp_widget'
