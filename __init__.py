@@ -1,4 +1,2 @@
-import logging
-import widget  # load plugin modules
-
-logging.info('cpu_temp_widget.__init__.py: cpu_temp_widget loaded')
+import widget
+import views
