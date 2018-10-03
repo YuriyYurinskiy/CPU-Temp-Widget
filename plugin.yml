@@ -1,7 +1,7 @@
 name: cpu_temp_widget
 author: 'Yuriy Yurinskiy'
 email: yuriyyurinskiy@yandex.ru
-url: https://yuriyyurinskiy.ru
+url: https://yuriyyurinskiy.ru/
 version: '0.1'
 title: 'CPU Temp Widget'
 icon: question
@@ -13,15 +13,6 @@ dependencies:
     - !!python/object:aj.plugins.PluginDependency {
         plugin_name: dashboard
     }
-    # - !!python/object:aj.plugins.OptionalPluginDependency {
-    #   plugin_name: my_other_plugin
-    # }
-    # - !!python/object:aj.plugins.ModuleDependency {
-    #   module_name: requests
-    # }
-    # - !!python/object:aj.plugins.BinaryDependency {
-    #   binary_name: curl
-    # }
 resources:
     - 'resources/js/module.coffee'
     - 'resources/js/controllers/widget.controller.coffee'
